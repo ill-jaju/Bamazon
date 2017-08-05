@@ -56,12 +56,21 @@ function userInquirer() { //inquirer function for user input
 
                 var stockLeft = res[j].stock_qty - answer.itemAmount
 
-                "INSERT INTO bamazondb",
-                {
-                    stock_qty: stockLeft
-                }
-
+                connection.query(
+                    "UPDATE products SET ? WHERE ?",
+                    [
+                        {
+                            stock_qty: stockLeft
+                        },
+                        {
+                            item_id: answer.itemId
+                        }
+                    ]
+                )
                 console.log('there are ' + stockLeft + ' available' )
+
+                itemDisplay();
+
             } else {
                 console.log('we no longer have that item');
             }
