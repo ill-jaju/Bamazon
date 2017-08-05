@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 var inquirer = require('inquirer');
+var query = "SELECT * from products"
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -17,7 +18,7 @@ connection.connect(function(err){
 });
 
 function itemDisplay() { //function to display available items
-    connection.query("SELECT * FROM products", function(err, res){
+    connection.query(query, function(err, res){
         if (err) throw err;
 
         for (var i = 0; i < res.length; i++){ //for loop that goes through results and displays proper info
@@ -45,14 +46,13 @@ function userInquirer() { //inquirer function for user input
     ])
     .then(function(answer){
 
-        var query = "SELECT * from products"
         connection.query(query, function(err, res){
 
             var j = answer.itemId - 1
 
             console.log('we have ' + res[j].stock_qty + ' available of id# ' + answer.itemId);
 
-            if (answer.itemAmount < res[j].stock_qty) {
+            if (answer.itemAmount <= res[j].stock_qty) {
 
                 var stockLeft = res[j].stock_qty - answer.itemAmount
 
@@ -73,6 +73,8 @@ function userInquirer() { //inquirer function for user input
 
             } else {
                 console.log('we no longer have that item');
+                
+                itemDisplay();
             }
         });
 
