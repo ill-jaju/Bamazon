@@ -13,6 +13,7 @@ connection.connect(function(err){
     if(err) throw err;
 
     itemDisplay();
+    userInquirer();
 });
 
 function itemDisplay() { //function to display available items
@@ -24,5 +25,25 @@ function itemDisplay() { //function to display available items
             console.log('-------------------------------------------------------');
         }
     });
+
+}
+
+
+function userInquirer() { //inquirer function for user input
+    inquirer.prompt([
+        {
+            name: "itemId",
+            type: "input",
+            message: "please enter item id that you desire"
+        },
+        {
+            name: "itemAmount",
+            type: "input",
+            message: "how much do you want?"
+        }
+    ])
+    .then(function(answer){
+        
+    })
 
 }
