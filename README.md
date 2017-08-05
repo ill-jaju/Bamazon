@@ -1,1 +1,1 @@
-![Alt Text](https://gfycat.com/ifr/EvenTestyHochstettersfrog.gif)
+![Alt Text](https://github.com/jamie-jessi/Bamazon/blob/master/images/hqgif.gif)
