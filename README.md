@@ -1,1 +1,1 @@
-# Bamazon
+![Alt Text](https://gfycat.com/ifr/EvenTestyHochstettersfrog.gif)
