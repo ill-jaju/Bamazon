@@ -14,28 +14,28 @@ create table products (
 );
 
 insert into products (product_name, department_name, price, stock_qty)
-values ('potion', 'recovery', 50.00, 99);
+values ('potion', 'recovery', 50.00, 50);
 
 insert into products (product_name, department_name, price, stock_qty)
-values ('smoke bomb', 'support', 100.00, 99);
+values ('smoke bomb', 'support', 100.00, 40);
 
 insert into products (product_name, department_name, price, stock_qty)
-values ('impaler', 'debuff', 500.00, 99);
+values ('impaler', 'debuff', 500.00, 10);
 
 insert into products (product_name, department_name, price, stock_qty)
-values ('molotov', 'attack', 400.00, 99);
+values ('molotov', 'attack', 400.00, 21);
 
 insert into products (product_name, department_name, price, stock_qty)
 values ('vagyrisk claw', 'instant-death', 1000.00, 5);
 
 insert into products (product_name, department_name, price, stock_qty)
-values ('grenade', 'non-elemental', 80.00, 99);
+values ('grenade', 'non-elemental', 80.00, 30);
 
 insert into products (product_name, department_name, price, stock_qty)
 values ('gysahl greens', 'field', 100.00, 99);
 
 insert into products (product_name, department_name, price, stock_qty)
-values ('power source', 'stat-upgrade', 1000.00, 99);
+values ('power source', 'stat-upgrade', 1000.00, 17);
 
 insert into products (product_name, department_name, price, stock_qty)
 values ('buster sword', 'weapon', 1.00, 1);
