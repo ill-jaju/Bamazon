@@ -68,6 +68,8 @@ function userInquirer() { //inquirer function for user input
                     ]
                 )
                 console.log('there are ' + stockLeft + ' available aftter your purchase.' )
+                console.log('your total is $' + answer.itemAmount * res[j].price )
+
 
                 itemDisplay();
 
