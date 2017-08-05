@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+var inquirer = require('inquirer');
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -9,21 +10,18 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function(err){
-    createProduct();
+    if(err) throw err;
+
+    itemDisplay();
 });
 
-function createProduct() {
-    var query = connection.query(
-        'insert into products set ?',
-        {
-            product_name: 'shake weight',
-            department_name: 'fitness',
-            price: 19.99,
-            stock_qty: 999
-        },
-        function(err, res) {
-            console.log(err);
-            console.log(res.affectedRows + ' product inserted');
-        }
-    )
+function itemDisplay() {
+    connection.query("SELECT * FROM products", function(err, res){
+        if (err) throw err;
+
+        console.log(res)
+
+
+    })
+
 }
