@@ -7,7 +7,7 @@ var connection = mysql.createConnection({ //configuration to connect to mysql da
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'MEclass@2003',
+    password: '', //removed password
     database: 'bamazondb'
 });
 
