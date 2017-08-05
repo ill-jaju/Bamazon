@@ -1,8 +1,9 @@
-var mysql = require('mysql');
+var mysql = require('mysql'); //requirements in order to function
 var inquirer = require('inquirer');
-var query = "SELECT * from products"
 
-var connection = mysql.createConnection({
+var query = "SELECT * from products" //global variable so i dont have to type again
+
+var connection = mysql.createConnection({ //configuration to connect to mysql database
     host: 'localhost',
     port: 3306,
     user: 'root',
@@ -26,7 +27,7 @@ function itemDisplay() { //function to display available items
             console.log('-------------------------------------------------------');
         }
 
-    userInquirer();
+    userInquirer(); //displays inquirer prompt
     });
 }
 
@@ -36,28 +37,28 @@ function userInquirer() { //inquirer function for user input
         {
             name: "itemId",
             type: "input",
-            message: "please enter item id that you desire"
+            message: "please enter the item id that you wish to purchase"
         },
         {
             name: "itemAmount",
             type: "input",
-            message: "how much do you want?"
+            message: "how many do you want?"
         }
     ])
     .then(function(answer){
 
         connection.query(query, function(err, res){
 
-            var j = answer.itemId - 1
+            var j = answer.itemId - 1 //makes user response into a variable. -1 because it starts at '0'
 
             console.log('we have ' + res[j].stock_qty + ' available of id# ' + answer.itemId);
 
-            if (answer.itemAmount <= res[j].stock_qty) {
+            if (answer.itemAmount <= res[j].stock_qty) { //if user request for purchase is less than or equal to current quanitity
 
-                var stockLeft = res[j].stock_qty - answer.itemAmount
+                var stockLeft = res[j].stock_qty - answer.itemAmount //makes a variable of stock left after user purchase
 
                 connection.query(
-                    "UPDATE products SET ? WHERE ?",
+                    "UPDATE products SET ? WHERE ?",  //updates sql table with proper values after purchase
                     [
                         {
                             stock_qty: stockLeft
@@ -66,17 +67,17 @@ function userInquirer() { //inquirer function for user input
                             item_id: answer.itemId
                         }
                     ]
-                )
-                console.log('there are ' + stockLeft + ' available aftter your purchase.' )
-                console.log('your total is $' + answer.itemAmount * res[j].price )
+                );
+                console.log('there are ' + stockLeft + ' available, aftter your purchase.' );
+                console.log('your total is $' + answer.itemAmount * res[j].price ); //displays amount individual owes by price x quantity
 
 
-                itemDisplay();
+                itemDisplay(); //displays table
 
             } else {
-                console.log('we no longer have that item');
+                console.log('we do not have enough in stock. your order did not go through.');
                 
-                itemDisplay();
+                itemDisplay(); //displays table
             }
         });
 
