@@ -12,6 +12,7 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
     if(err) throw err;
 
+    console.log("connected as " + connection.threadId);
     itemDisplay();
 });
 
@@ -23,10 +24,9 @@ function itemDisplay() { //function to display available items
             console.log('id# ' +  res[i].item_id + ' | ' + res[i].product_name + ' |  '  + res[i].department_name + ' | cost - ' + res[i].price + ' | stock - ' + res[i].stock_qty + ' | ');
             console.log('-------------------------------------------------------');
         }
-    });
 
     userInquirer();
-
+    });
 }
 
 
@@ -50,7 +50,7 @@ function userInquirer() { //inquirer function for user input
 
             var j = answer.itemId - 1
 
-            console.log('you want to buy ' + answer.itemAmount + ' of id# ' + answer.itemId );
+            console.log('we have ' + res[j].stock_qty + ' available of id# ' + answer.itemId);
 
             if (answer.itemAmount < res[j].stock_qty) {
 
@@ -67,7 +67,7 @@ function userInquirer() { //inquirer function for user input
                         }
                     ]
                 )
-                console.log('there are ' + stockLeft + ' available' )
+                console.log('there are ' + stockLeft + ' available aftter your purchase.' )
 
                 itemDisplay();
 
