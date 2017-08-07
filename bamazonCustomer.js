@@ -37,12 +37,24 @@ function userInquirer() { //inquirer function for user input
         {
             name: "itemId",
             type: "input",
-            message: "please enter the item id that you wish to purchase"
+            message: "please enter the item id that you wish to purchase",
+            validate: function(value) {
+            if (isNaN(value) === false) { //makes sure an integer is used
+                return true;
+            }
+            return false;
+            },
         },
         {
             name: "itemAmount",
             type: "input",
-            message: "how many do you want?"
+            message: "how many do you want?",
+            validate: function(value) {
+            if (isNaN(value) === false) { //makes sure an integer is used
+                return true;
+            }
+            return false;
+            },      
         }
     ])
     .then(function(answer){
