@@ -34,5 +34,4 @@ Working Example -
 >![prompts](https://github.com/jamie-jessi/Bamazon/blob/master/images/updatedTable.png)
 
 ### Version Notes
-1.0 'working challenge 1'
-<dd>meets the minimum requirements. need to add inquirer prompt/confirmation for purchases.  
+1.0 'working challenge 1'  meets the minimum requirements. need to add inquirer prompt/confirmation for purchases.  
