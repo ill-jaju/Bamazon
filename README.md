@@ -29,3 +29,10 @@ Working Example -
 >
 >If there is not enough in stock, the user order will not go through.
 >![prompts](https://github.com/jamie-jessi/Bamazon/blob/master/images/purchaseNo.png)
+
+4. The table will update itself with the proper stock quantity after each customer purchase prompt.
+>![prompts](https://github.com/jamie-jessi/Bamazon/blob/master/images/updatedTable.png)
+
+### Version Notes
+1.0 'working challenge 1'
+<dd>meets the minimum requirements. need to add inquirer prompt/confirmation for purchases.  
