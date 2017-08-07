@@ -14,4 +14,4 @@ A CLI (command line interface) app that simulates an Amazon-like storefront.
 ### Customer Application
 
 Working Example -
-![working example](https://github.com/jamie-jessi/Bamazon/blob/master/images/hqgif.gif)
+>![working example](https://github.com/jamie-jessi/Bamazon/blob/master/images/hqgif.gif)
