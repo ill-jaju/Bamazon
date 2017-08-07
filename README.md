@@ -4,8 +4,8 @@ A CLI (command line interface) app that simulates an Amazon-like storefront.
 
 ### Prerequisites / Technologies Used
 
--MySQL
--NodeJS
+- MySQL
+- NodeJS
 
 ### Installing
 
@@ -15,3 +15,4 @@ A CLI (command line interface) app that simulates an Amazon-like storefront.
 
 Working Example -
 >![working example](https://github.com/jamie-jessi/Bamazon/blob/master/images/hqgif.gif)
+
